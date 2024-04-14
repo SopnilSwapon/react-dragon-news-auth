@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types'; // ES6
 
 const NewsCard = ({aNews}) => {
     const {title, image_url, details, _id}  = aNews;
@@ -11,7 +12,7 @@ image_url
   <div className="card-body">
     <h2 className="card-title">{title}</h2>
    {
-     details.length > 200 ? <p>{details.slice(0, 200)} <Link className="text-green-700  font-bold" to={`/details${_id}`}>Read more...</Link></p> : <p>{details}</p>
+     details.length > 200 ? <p>{details.slice(0, 200)} <Link className="text-green-700  font-bold" to={`/details/${_id}`}>Read more...</Link></p> : <p>{details}</p>
    }
   </div>
 </div>
@@ -20,3 +21,6 @@ image_url
 };
 
 export default NewsCard;
+NewsCard.propTypes = {
+    aNews: PropTypes.object
+}
