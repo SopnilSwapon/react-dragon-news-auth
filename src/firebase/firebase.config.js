@@ -4,8 +4,9 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('inside the firebase auth', import.meta.env.VITE_PASS)
 const firebaseConfig = {
-  apiKey: "AIzaSyBroDNjpMHojuSoEBSDrL9e5Vp15uoxFYk",
+  apiKey: import.meta.env.VITE_APIKEY,
   authDomain: "react-dragon-news-auth-ecc2e.firebaseapp.com",
   projectId: "react-dragon-news-auth-ecc2e",
   storageBucket: "react-dragon-news-auth-ecc2e.appspot.com",
